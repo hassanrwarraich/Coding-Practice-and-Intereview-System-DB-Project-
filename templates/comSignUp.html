@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Company Sign Up</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  </head>
+
+  <body>
+	<h1 class="text-center">Company Sign Up Page</h1>
+		<div class="container">
+			<div class="login d-flex align-items-center py-5">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-9 col-lg-8 mx-auto">
+						{% from "includes/_formhelpers.html" import render_field %}
+						<form method="POST" action="">
+							<div class="form-group">
+								{{render_field(form.agentName, class_="form-control")}}
+							</div>
+							<div class="form-group">
+								{{render_field(form.companyName, class_="form-control")}}
+							</div>
+							<div class="form-group">
+								{{render_field(form.email, class_="form-control")}}
+							</div>
+							<div class="form-group">
+								{{render_field(form.password, class_="form-control")}}
+							</div>
+							<div class="form-group">
+								{{render_field(form.confirm, class_="form-control")}}
+							</div>
+							<input class="btn btn-primary text-uppercase font-weight-bold mb-2" type="submit" value="submit"></input>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+  </body>
+</html>

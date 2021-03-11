@@ -1,0 +1,23 @@
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="/">CPIS</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li><a href="/">Home</a></li>
+    </ul>
+
+    <ul class="navbar-nav navbar-right">
+        {% if session.logged_in %}
+            <li class="nav-item nav-link"><a href="/logout.html">Logout</a></li>
+        {% else %}
+            <li class="nav-item nav-link"><a href="/devSignUp.html">Register(Developer)</a></li>
+            <li class="nav-item nav-link"><a href="/devSignIn.html">Login(Developer)</a></li>
+        {% endif %}
+
+    </ul>
+  </div>
+</nav>

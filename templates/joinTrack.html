@@ -1,0 +1,31 @@
+{% extends 'layout.html' %}
+
+<header style="text-align: center;">
+  <h1 class="text-secondary">Join Track</h1>
+  &nbsp;
+</header>
+
+{% block body %}
+
+<table style="width:100%; border: solid black;">
+
+    <tr>
+        <th class="align-center">Track name</th>
+        <th>Number of questions</th>
+        <th>Join</th>
+    </tr>
+    {% for track in tracks %}
+    <tr>
+        <th>{{track["track_name"]}}</th>
+        <th>{{track["no_questions"]}}</th>
+        <th>
+            <form aciton="" method="POST">
+                <textarea style="display: none" name="id">{{track['track_id']}}</textarea>
+                <button class="btn btn-primary" value="submit" id={{track["track_id"]}}>Select</button>
+            </form>
+        </th>
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}

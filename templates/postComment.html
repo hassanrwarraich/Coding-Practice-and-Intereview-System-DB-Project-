@@ -1,0 +1,21 @@
+{% extends 'layout.html' %}
+
+
+{% block body %}
+<header style="text-align: center;">
+    <h1 class="text-secondary">Post Comment</h1>
+</header>
+    {% from "includes/_formhelpers.html" import render_field %}
+    <form method="POST" action="">
+      <div class="form-group">
+        {{render_field(form.comment, class_="form-control")}}
+      </div>
+      <div class="p-3" style="text-align: center;">
+        <input class="btn btn-success" role="button" type="submit" value="Post"></input>
+      </div>
+    </form>
+
+    <div class="p-3" style="text-align: center;">
+      <a href="devHome.html" class="btn btn-info" role="button">Home</a>
+    </div>
+{% endblock %}

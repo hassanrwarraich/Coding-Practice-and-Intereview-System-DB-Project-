@@ -1,0 +1,20 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<h1 class="text-center mt-7">Search Question</h1>
+<div class="vertical-center">
+	<div class="container">
+		<!-- Search form -->
+		{% from "includes/_formhelpers.html" import render_field %}
+			<form action="" method="POST">
+			<div class="md-form mt-5">
+				{{render_field(form.search, class_="form-control", placeholder="Search Question by Topic" )}}
+			</div>
+			<div class="row justify-content-center">
+				<button type="submit" class="btn btn-primary mt-5" style="width: 200px">Search Question</button>
+			</div>
+		</form>
+	</div>
+</div>
+
+{% endblock %}

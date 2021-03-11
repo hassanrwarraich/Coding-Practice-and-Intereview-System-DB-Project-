@@ -1,0 +1,71 @@
+{% extends 'layout.html' %}
+
+
+{% block body %}
+
+<header class="text-center">
+  <h1 class="text-secondary">CS353 - Database Systems</h1>
+  <h3 class="text-secondary">Coding Practice and Interview System (CPIS)</h3>
+  &nbsp;
+</header>
+
+<div class="d-flex justify-content-center">
+    <div class="w-50">
+        <span class="font-weight-bold mr-1">CPIS  </span>  is a web-based application intended to help developers practice
+      coding and help companies ask interview questions for candidates
+      during the hiring process.
+    </div>
+</div>
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-6">
+            <div class="mx-auto card" style="width: 18rem;">
+            <div class="list-group-item text-center" style="width: 18rem;">For Developers</div>
+        </div>
+    </div>
+        <div class="col-6">
+            <div class="mx-auto card" style="width: 18rem;">
+            <div class="list-group-item text-center" style="width: 18rem;">For Companies</div>
+        </div>
+        </div>
+    </div>
+    <div class="row mt-2">
+        <div class="col">
+            <div class="container">
+                &nbsp;
+                <div class="d-flex justify-content-center">
+                    <div class="p-3">
+                        <a href="devSignIn.html" class="btn btn-success" role="button">SIGN IN</a>
+                    </div>
+                    <div class="p-3">
+                        <a href="devSignUp.html" class="btn btn-info" role="button">SIGN UP</a>
+                    </div>
+                    <div class="p-3">
+                        <a href="adminSignIn.html" class="btn btn-dark" role="button">Admin</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="container">
+                &nbsp;
+                <div class="d-flex justify-content-center">
+                    <div class="p-3">
+                        <a href="comSignIn.html" class="btn btn-success" role="button">SIGN IN</a>
+                    </div>
+                    <div class="p-3">
+                        <a href="comSignUp.html" class="btn btn-info" role="button">SIGN UP</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- <a href="https://cdn.glitch.com/53146929-80e7-4b2f-a170-ab1098222127%2FCS353%20-%20Project%20Proposal.pdf?v=1583148316129" class="btn btn-primary d-flex justify-content-center mt-5" role="button">
+    Download Project Proposal</a>
+<a href="https://cdn.glitch.com/53146929-80e7-4b2f-a170-ab1098222127%2FCS353%20-%20Design%20Report.pdf?v=1589802316751" class="btn btn-primary d-flex justify-content-center mt-5" role="button">
+        Download Design Report</a> -->
+
+{% endblock %}

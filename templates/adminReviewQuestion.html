@@ -1,0 +1,45 @@
+{% extends 'layout.html' %}
+
+
+{% block body %}
+<header class="text-center">
+  <br>
+  <h1 class="text-secondary">Review Questions</h1>
+  &nbsp;
+</header>
+  <div>
+      <table style="width:100%; border: solid black;">
+      <tr>
+        <th>Question</th>
+        <th>Topic</th>
+        <th>Difficulty</th>
+        <th>Review</th>
+        <th>Accpet</th>
+        <th>Decline</th>
+      </tr>
+      {% for question in questions %}
+      <tr>
+        <th>Question {{ question['question_id'] }}</th>
+        <th>{{ question['dept_name'] }}</th>
+        <th>{{ question['difficulty'] }}</th>
+        <form method="POST" action="">
+          <th><textarea style="display:none;" name=id>{{question['question_id']}}</textarea><textarea style="display:none;" name=btn>review</textarea><button class="btn btn-info" type="submit">Review</button></th>
+        </form>
+        <form method="POST" action="">
+          <th><textarea style="display:none;" name=id>{{question['question_id']}}</textarea><textarea style="display:none;" name=btn>accept</textarea><button class="btn btn-info" type="submit">Accept</button></th>
+        </form>
+        <form method="POST" action="">
+          <th><textarea style="display:none;" name=id>{{question['question_id']}}</textarea><textarea style="display:none;" name=btn>decline</textarea><button class="btn btn-info" type="submit">Decline</button></th>
+        </form>
+      </tr>
+      {% endfor %}
+      </table>
+    </div>
+
+    <div class="row justify-content-center">
+        <a href="adminHome.html">
+            <button type="button" class="btn btn-primary mt-5"  style="width: 200px">Home</button>
+        </a>
+    </div>
+
+{% endblock %}

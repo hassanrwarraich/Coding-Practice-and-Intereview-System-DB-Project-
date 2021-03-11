@@ -1,0 +1,47 @@
+{% extends 'layout.html' %}
+
+
+{% block body %}
+  <header class="text-center">
+    <br>
+  	<h1 class="text-secondary">Create Track</h1>
+  	&nbsp;
+  </header>
+  <body>
+	   <div>
+      {% include 'includes/_message.html' %}
+       <table style="width:100%; border: solid black;">
+        <tr>
+          <th>question</th>
+          <th>Difficulty</th>
+          <th>Department name</th>
+          <th> Add to track</th>
+        </tr>
+        {% for questions in question %}
+
+        <tr>
+          <th>question</th>
+          <th>{{questions["difficulty"]}}</th>
+          <th>{{questions["dept_name"]}}</th>
+          <th><form method="POST" style= "width: 200px; height: 90px;" action = "">
+            <textarea style="display: none; width:0px;height:0px" name="id">{{questions["question_id"]}}</textarea>
+            <button class="btn btn-primary text-uppercase font-weight-bold mb-2" value="submit" id={{questions["question_id"]}} onClick="funct(this.id)"  >Add to Track</button>
+          </form></th>
+        </tr>
+         {% endfor %}
+       </table>
+     </div>
+
+     &nbsp;
+
+
+     <div class="row justify-content-center">
+      <form method="POST" style= "width: 200px; height: 90px;" action = "">
+
+        <textarea style="display: none; width:0px;height:0px" name="id">0</textarea>
+        <button class="btn btn-primary text-uppercase font-weight-bold mb-2" value="submit">Submit Track</button>
+
+      </form>
+     </div>
+
+     {% endblock %}

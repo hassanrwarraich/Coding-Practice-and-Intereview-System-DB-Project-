@@ -1,0 +1,29 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+<h1 class="text-center">Admin Sign In Page</h1>
+<div class="container">
+  <div class="login d-flex align-items-center py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-9 col-lg-8 mx-auto">
+          <h3 class="login-heading mb-4">Welcome back!</h3>
+          {% from "includes/_formhelpers.html" import render_field %}
+          <form method="POST" action="">
+
+            <div class="form-group">
+                {{render_field(form.email, class_="form-control")}}
+            </div>
+            <div class="form-group">
+                {{render_field(form.password, class_="form-control")}}
+            </div>
+
+            <input class="btn btn-primary text-uppercase font-weight-bold mb-2" type="submit" value="submit"></input>
+        </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends 'layout.html' %}
+
+
+{% block body %}
+  <header class="text-center">
+    <br>
+  	<h1 class="text-secondary">Review Track</h1>
+  	&nbsp;
+  </header>
+  <body>
+	   <div>
+      {% include 'includes/_message.html' %}
+      <table style="width:100%; border: solid black;">
+       <tr>
+         <th>Question</th>
+         <th>Topic</th>
+         <th>Difficulty</th>
+       </tr>
+       {% for questions in question %}
+
+       <tr>
+         <th>question</th>
+         <th>{{questions["dept_name"]}}</th>
+         <th>{{questions["difficulty"]}}</th>
+
+       </tr>
+        {% endfor %}
+      </table>
+     </div>
+
+     <div style="padding: 50px" >
+
+      <form method="POST" style= "width: 200px; height: 90px;" action = "">
+        <textarea name="trackName" id="trackName" rows="1" cols="60%" style="border: 3px solid black">Track name</textarea>
+        <button class="btn btn-primary text-uppercase font-weight-bold mb-2" type="submit" value="submit" id="FinishReview" onClick="funct(this.id)"  >Submit Track</button>
+      </form>
+      <!-- <textarea id="trackName" rows="1" cols="60%" style="border: 3px solid black">
+       Track name</textarea>
+       <textarea id="trackCatagory" rows="1" cols="60%" style="border: 3px solid black">
+       Track Catagory</textarea>-->
+     </div>
+	   &nbsp;
+{% endblock %}

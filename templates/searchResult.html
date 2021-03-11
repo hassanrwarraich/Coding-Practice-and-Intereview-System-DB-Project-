@@ -1,0 +1,33 @@
+{% extends 'layout.html' %}
+
+
+{% block body %}
+<hgroup class="mb20">
+        <h1>Search Results</h1>
+        <h2 class="lead"><strong class="text-danger">{{ questions|count }}</strong>
+            result were found for the search for <strong class="text-danger">{{ topic }}</strong></h2>
+</hgroup>
+<div class="container">
+    <div class="search-result row">
+        {% for question in questions %}
+        <div class="col-xs-12 col-sm-12 col-md-4">
+            <ul class="meta-search">
+                <li><i class="glyphicon glyphicon-calendar"></i> <span>Question</span></li>
+            </ul>
+        </div>
+        <div class="col-md-4 excerpet">
+            <p>{{ question['description'] }}</p>
+        </div>
+
+        <div class="col-md-4 excerpet">
+            <a href={{ "questionDetails/" + question['question_id']|string  }}><button class="btn btn-success float-right">Open Question</button></a>
+        </div>
+        <span class="clearfix borda"></span>
+        {% endfor %}
+        <a href="/searchQuestion.html">
+            <button class="btn btn-info" type="button" name="button">Go Back</button>
+        </a>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<header class="text-center">
+  <br>
+  <h1 class="text-secondary">Invite Developer</h1>
+  &nbsp;
+</header>
+       <table style="width:100%; border: solid black;">
+        <tr>
+          <th>Developer</th>
+          <th>Job Details</th>
+        </tr>
+        {% for developers in developer %}
+        <tr>
+          <th>{{developers["name"]}}</th>
+          <th><form method="POST" style= "width: 200px; height: 90px; margin-bottom: 50px;" action = "">
+
+            <textarea name="jobDetails" id="jobDetails" rows="1" cols="60%" style="border: 3px solid black">Job Description</textarea>
+            <textarea name="endDate" id="endDate" rows="1" cols="60%" style="border: 3px solid black">2019-06-21</textarea>
+            <textarea style="display: none; width:0px;height:0px" name="id">{{developers["developer_id"]}}</textarea>
+            <button class="btn btn-primary text-uppercase font-weight-bold mb-2" type="submit" value="submit" id={{developers["developer_id"]}} onClick="funct(this.id)"  >Invite</button>
+
+          </form></th>
+        </tr>
+         {% endfor %}
+       </table>
+     </div>
+
+     <div class="row justify-content-center">
+         <a href="compHome.html">
+             <button type="button" class="btn btn-primary mt-5"  style="width: 200px">Home</button>
+         </a>
+
+  {% endblock %}

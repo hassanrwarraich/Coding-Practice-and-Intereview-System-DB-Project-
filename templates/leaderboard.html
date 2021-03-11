@@ -1,0 +1,29 @@
+{% extends 'layout.html' %}
+<header style="text-align: center;">
+  <h1 class="text-secondary">Leaderboard</h1>
+  &nbsp;
+</header>
+
+{% block body %}
+
+  <body>
+    <div style="padding:1%">
+	     <table style="width:90%; border: solid black;">
+         <tr>
+           <th>User name</th>
+           <th>Score</th>
+         </tr>
+         {% for leaders in leader %}
+         <tr>
+           <th>{{leaders["name"]}}</th>
+           <th>{{leaders["score"]}}</th>
+         </tr>
+         {% endfor %}
+       </table>
+     </div>
+	   &nbsp;
+     <div class="p-3" style="text-align: center;">
+       <a href="devHome.html" class="btn btn-info" role="button">Back to Home</a>
+     </div>
+
+{% endblock %}

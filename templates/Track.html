@@ -1,0 +1,33 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<header style="text-align: center;">
+    <h1 class="text-secondary">Track</h1>
+</header>
+<table style="width:100%; border: solid black;">
+    <tr>
+        <th>Question</th>
+        <th>Topics</th>
+        <th>Difficulty</th>
+        <th>submit sol</th>
+    </tr>
+    {% for question in questions %}
+    <tr>
+        <th>{{question["description"]}}</th>
+        <th>{{question["dept_name"]}}</th>
+        <th>{{question["difficulty"]}}</th>
+        <th>
+            <a href="/questionDetails/{{question.question_id}}">
+                <button type="button" class="btn btn-primary">Submit Solution</button>
+            </a>
+        </th>
+    </tr>
+    {% endfor %}
+  </table>
+
+    <div class="p-3" style="text-align: center;">
+        <form method="POST" action = "">
+            <button type="submit" value="submit" class="btn btn-info mt-5"  style="width: 200px">Show leaderboard</button>
+      </form>
+    </div>
+{% endblock %}

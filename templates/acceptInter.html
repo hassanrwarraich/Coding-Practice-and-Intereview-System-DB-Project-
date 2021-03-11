@@ -1,0 +1,41 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+  <header style="text-align: center;">
+  	<h1 class="text-secondary">Accept Interview</h1>
+  	&nbsp;
+  </header>
+  {% if aInter %}
+	<table style="width:100%; border: solid black;">
+  <tr>
+    <th>Company Name</th>
+    <th>Deadline</th>
+    <th>Accept Interview</th>
+  </tr>
+
+      {% for aInt in aInter %}
+      <tr>
+        <th>{{aInt["comp_name"]}}</th>
+        <th>{{aInt["endDate"]}}</th>
+        <th>
+            <form method="POST" style= "width: 200px; height: 90px; align-content:right " action = "">
+              <textarea style="display: none; width:0px;height:10px" name="compRepId">{{ aInt["compRep_id"]}}</textarea>
+              <textarea style="display: none; width:0px;height:10px" name="devId">{{ aInt["developer_id"]}}</textarea>
+            <button class="btn btn-primary mt-4" style="width: 200px" type="submit" value="submit" id={{ aInt["compRep_id"]}}>Details</button>
+            </form>
+          </th>
+      </tr>
+       {% endfor %}
+       </table>
+    {% else %}
+        <h1 class="text-center">NO JOB OFFERS!</h1>
+        &nbsp;
+
+
+  {% endif %}
+  <div class="p-3" style="text-align: center;">
+    <a href="devHome.html" class="btn btn-info" role="button">Home</a>
+  </div>
+
+
+{% endblock %}

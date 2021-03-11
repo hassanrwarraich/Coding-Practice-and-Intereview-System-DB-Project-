@@ -1,0 +1,48 @@
+{% extends 'layout.html' %}
+
+
+{% block body %}
+<header style="text-align: center;">
+  <h1 class="text-secondary">Question</h1>
+  &nbsp;
+</header>
+<div class="row justify-content-center mt-5">
+    {{question["description"]}}
+</div>
+<script>
+  SEC_HTTPS = true;
+  SEC_BASE = "compilers.widgets.sphere-engine.com";
+  (function(d, s, id){ SEC = window.SEC || (window.SEC = []);
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return; js = d.createElement(s); js.id = id;
+    js.src = (SEC_HTTPS ? "https" : "http") + "://" + SEC_BASE + "/static/sdk/sdk.js";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, "script", "sphere-engine-compilers-jssdk"));
+  SEC.ready=function(e){"loading"!=document.readyState&&"interactive"!=document.readyState?e():window.addEventListener("load",e)};
+</script>
+<div style = "height: 700px;";">
+  <div data-id="widget" class="sec-widget" data-widget="5e06715faee0ebf9c5873290275e9499"></div>
+</div>
+<script>
+  SEC.ready(function() {
+      var afterSendSubmission = function(data) {
+          // $('#result').html('')
+          //     .append("> submissionId: " + data.submissionId + "<br><br>");
+          console.log (data);
+          alert(data.submissionId);
+      };
+
+      var sourceCode = "# Best of Luck !\nimport sys\n\nfor input in sys.stdin:\n\tprint (input)";
+      var inputs = "1\n2\n3" //"{{ data }}";
+      var SECWidget = SEC.widget("widget");
+      SECWidget.loadSourceCode(116, sourceCode, inputs);
+      SECWidget.setCompilers([116]);
+      SECWidget.events.subscribe('afterSendSubmission', afterSendSubmission);
+
+  });
+
+</script>
+Data:
+<pre id="result" style="height: 100px;">Submit submission to see the result</pre>
+
+{% endblock %}

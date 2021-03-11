@@ -1,0 +1,30 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+    <div class="container">
+        <h1 class="text-center mt-7">Homepage</h1>
+        <div class="row justify-content-center">
+            <a href="adminCreateTrack.html"><button type="button" class="btn btn-primary mt-5" style="width: 200px">Create Track</button></a>
+        </div>
+        <div class="row justify-content-center">
+            <a href="adminCreateQuestion.html">
+                <button type="button" class="btn btn-primary mt-5"  style="width: 200px">Create Question</button>
+            </a>
+        </div>
+        <!-- <div class="row justify-content-center">
+            <a href="adminSearchTrack.html">
+                <button type="button" class="btn btn-primary mt-5"  style="width: 200px">Edit track</button>
+            </a>
+        </div> -->
+        <div class="row justify-content-center">
+            <a href="adminSearchEditQuestion.html">
+                <button type="button" class="btn btn-primary mt-5"  style="width: 200px">Edit Question</button>
+            </a>
+        </div>
+        <div class="row justify-content-center">
+            <a href="adminReviewQuestion.html">
+                <button type="button" class="btn btn-primary mt-5"  style="width: 200px">Review Question</button>
+            </a>
+        </div>
+    </div>
+{% endblock %}

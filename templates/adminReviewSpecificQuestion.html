@@ -1,0 +1,34 @@
+{% extends 'layout.html' %}
+
+
+{% block body %}
+<header style="text-align: center;">
+  <h1 class="text-secondary">Review Question</h1>
+  &nbsp;
+</header>
+<div>
+    Question:
+    <p id="Question" rows="10" cols="160%" style="border: 3px solid black ; padding-left: 10px;padding-right: 10px;">
+      {{ question['description']}}
+    </p>
+  </div>
+  <div>
+    <p id="Question" rows="1" cols="120%" style="border: 3px solid black ;padding-left: 10px;padding-right: 10px;">
+      {{ question['dept_name']}}
+    </p>
+  </div>
+  {% from "includes/_formhelpers.html" import render_field %}
+  <div>
+    Difficulty: <b>{{ question['difficulty'] }}</b>
+
+  <div class="p-3" style="text-align: center; justify-content: center;">
+      <form style="float: left ;" method="POST" action="adminReviewSpecificQuestion.html">
+        <textarea style="display:none;" name=id>{{question['question_id']}}</textarea><textarea style="display:none;" name=btn>accept</textarea><button class="btn btn-info" type="submit">Accept</button>
+      </form>
+      <form style="float: right;" method="POST" action="adminReviewSpecificQuestion.html">
+        <textarea style="display:none;" name=id>{{question['question_id']}}</textarea><textarea style="display:none;" name=btn>decline</textarea><button class="btn btn-info" type="submit">Decline</button>
+      </form>
+  </div>
+
+</div>
+{% endblock %}

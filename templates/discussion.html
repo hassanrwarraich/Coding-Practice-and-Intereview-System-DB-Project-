@@ -1,0 +1,36 @@
+{% extends 'layout.html' %}
+
+<header style="text-align: center;">
+  <h1 class="text-secondary">Discussion</h1>
+</header>
+
+{% block body %}
+{% if comments %}
+    <table style="width:100%; border: solid black;">
+        <tr>
+            <th>Comment</th>
+            <th>Comment Date</th>
+        </tr>
+        {% for comment in comments %}
+        <tr>
+            <th>{{comment["description"]}}</th>
+            <th>{{comment["comment_date"]}}</th>
+        </tr>
+        {% endfor %}
+      </table>
+ {% else %}
+     <h1 class="text-center">NO COMMENTS YET!</h1>
+{% endif %}
+<form method="POST">
+<div class="p-3" style="text-align: center;">
+  <button class="btn btn-success" role="button" type="submit">ADD COMMENT</button>
+</div>
+</form>
+
+<div class="p-3" style="text-align: center;">
+    <a href="/devHome.html" class="btn btn-info" role="button">Home</a>
+</div>
+
+<div class="sec-widget" data-widget="9e1e25c224b32a941cccc468d284e148"></div>
+
+{% endblock %}
